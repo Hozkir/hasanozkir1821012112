@@ -9,17 +9,17 @@ var saatSema = new mongoose.Schema(
         kapali:{type:Boolean,required:true}
     },
     {usePushEach: true}
-);
+    );
 
 var yorumSema = new mongoose.Schema(
     {
         yorumYapan:{type:String,required:true},
         puan:{type:Number,required:true,min:0,max:5},
         yorumMetni:{type:String,required:true},
-        tarih:{type:Date,default:Date.now},
+        tarih:{type:Date,default:Date.now}
     },
     {usePushEach: true}
-);
+    );
 
 var mekanSema = new mongoose.Schema(
     {
@@ -29,7 +29,7 @@ var mekanSema = new mongoose.Schema(
         imkanlar:[String],
         koordinatlar:{type:[Number],index:'2dsphere'},
         saatler:[saatSema],
-        yorumlar:[yorumSema],
+        yorumlar:[yorumSema]
     },{usePushEach: true}
-);
+    );
 mongoose.model('mekan',mekanSema,'mekanlar');

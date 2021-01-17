@@ -17,9 +17,7 @@ var yorumSema = new mongoose.Schema(
         puan:{type:Number,required:true,min:0,max:5},
         yorumMetni:{type:String,required:true},
         tarih:{type:Date,default:Date.now},
-    },
-    {usePushEach: true}
-);
+    });
 
 var mekanSema = new mongoose.Schema(
     {
